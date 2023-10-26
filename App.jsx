@@ -1,8 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {ScrollView, StyleSheet, Text, View,Platform} from 'react-native';
+import SignUp from './src/Screens/Authenticate/SignUp';
+import {SafeAreaView} from 'react-native';
+import Login from './src/Screens/Authenticate/Login';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React,{useEffect} from 'react'
 import SplashScreen from 'react-native-splash-screen'
-import { Platform } from 'react-native'
 
+
+
+const Stack = createNativeStackNavigator();
 const App = () => {
  useEffect(()=>{
   if(Platform.OS==='android'){
@@ -12,12 +20,25 @@ const App = () => {
  },[])
 
   return (
-    <View>
-      <Text>Food Delivery App</Text>
-    </View>
-  )
-}
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="signup"
+            component={SignUp}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="login"
+            component={Login}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
