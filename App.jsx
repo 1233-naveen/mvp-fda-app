@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
@@ -8,6 +9,8 @@ import { Dimensions } from 'react-native'
 
 
 
+
+const Stack = createNativeStackNavigator();
 const App = () => {
 
   const {width,height} = Dimensions.get('window')
@@ -23,12 +26,14 @@ const App = () => {
 
 
   return (
+
     <SafeAreaView>
       <Text style={{flexGrow:2}}>Hello kkks</Text>
     </SafeAreaView>
   )
 }
 
-export default App
 
-const styles = StyleSheet.create({})
+export default App;
+
+const styles = StyleSheet.create({});
