@@ -10,6 +10,12 @@ import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
+// @Override
+//   protected void onCreate(Bundle savedInstanceState) {
+//     super.onCreate(null);
+//   }
+
+
 
 @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +31,7 @@ public class MainActivity extends ReactActivity {
     return "FoodDeliveryApp";
   }
 
- @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(null);
-  }
+ 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. Here we use a util class {@link
    * DefaultReactActivityDelegate} which allows you to easily enable Fabric and Concurrent React
